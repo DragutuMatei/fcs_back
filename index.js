@@ -9,6 +9,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (res, req) => {
+    console.log("works");
+})
+
+
 app.post("/payment", cors(), async (req, res) => {
   let { amount, id } = req.body;
   try {
